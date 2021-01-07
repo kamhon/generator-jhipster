@@ -1456,7 +1456,7 @@ module.exports = class extends Generator {
                 pk = 'UUID';
                 break;
             default:
-                pk = 'Long';
+                pk = 'String';
                 break;
         }
         return pk;

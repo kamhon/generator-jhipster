@@ -38,6 +38,10 @@ export interface I<%= entityAngularName %> {
     <%_ variablesWithTypes.forEach(variablesWithType => { _%>
     <%- variablesWithType %>;
     <%_ }); _%>
+    createdBy?: string;
+    createdDate?: Date;
+    lastModifiedBy?: string;
+    lastModifiedDate?: Date;
 }
 
 export class <%= entityAngularName %> implements I<%= entityAngularName %> {
@@ -45,6 +49,10 @@ export class <%= entityAngularName %> implements I<%= entityAngularName %> {
         <%_ variablesWithTypes.forEach(variablesWithType => { _%>
         public <%- variablesWithType %>,
         <%_ }); _%>
+        public createdBy?: string,
+        public createdDate?: Date,
+        public lastModifiedBy?: string,
+        public lastModifiedDate?: Date
     ) {
         <%_ for (idx in defaultVariablesValues) { _%>
         <%- defaultVariablesValues[idx] %>

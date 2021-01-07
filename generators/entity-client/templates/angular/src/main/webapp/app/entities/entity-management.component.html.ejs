@@ -75,6 +75,10 @@
                     <th scope="col" <% if (pagination !== 'no') { %> jhiSortBy="<%= relationships[idx].relationshipName + (fieldName) %>"<% } %>><span jhiTranslate="<%= `${i18nKeyPrefix}.${relationships[idx].relationshipName}` %>"><%= relationships[idx].relationshipNameHumanized %></span><% if (pagination !== 'no') { %> <fa-icon icon="sort"></fa-icon><% } %></th>
                         <%_ } _%>
                     <%_ } _%>
+                    <th scope="col" <% if (pagination !== 'no') { %>jhiSortBy="createdBy"<% } %>><span jhiTranslate="userManagement.createdBy">Created By</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col" <% if (pagination !== 'no') { %>jhiSortBy="createdDate"<% } %>><span jhiTranslate="userManagement.createdDate">Created Date</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col" <% if (pagination !== 'no') { %>jhiSortBy="lastModifiedBy"<% } %>><span jhiTranslate="userManagement.lastModifiedBy">Last Modified By</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col" <% if (pagination !== 'no') { %>jhiSortBy="lastModifiedDate"<% } %>><span jhiTranslate="userManagement.lastModifiedDate">Last Modified Date</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -156,6 +160,10 @@
                     </td>
                     <%_ } _%>
                 <%_ } _%>
+                    <td>{{ <%= entityInstance %>.createdBy }}</td>
+                    <td>{{ <%= entityInstance %>.createdDate | date:'dd/MM/yy HH:mm' }}</td>
+                    <td>{{ <%= entityInstance %>.lastModifiedBy }}</td>
+                    <td>{{ <%= entityInstance %>.lastModifiedDate | date:'dd/MM/yy HH:mm' }}</td>
                     <td class="text-right">
                         <div class="btn-group">
                             <button type="submit"

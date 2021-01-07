@@ -80,7 +80,8 @@ export class AuthServerProvider {
         if (rememberMe) {
             this.$localStorage.store('authenticationToken', jwt);
         } else {
-            this.$sessionStorage.store('authenticationToken', jwt);
+            // this.$sessionStorage.store('authenticationToken', jwt);
+            this.$localStorage.store('authenticationToken', jwt);
         }
     }
 

@@ -39,6 +39,9 @@ for (idx in relationships) {
         header.push(getColumnName(relationships[idx].relationshipName) + "_id");
     }
 }
+header.push('version');
+header.push('created_by');
+header.push('last_modified_by');
 table.push(header);
 
 // Set number of rows to be generated
@@ -214,6 +217,9 @@ for (lineNb = 1; lineNb <= numberOfRows; lineNb++) {
             }
         }
     }
+    line.push(0);
+    line.push('system');
+    line.push('system');
     if (line.length === header.length) {
         table.push(line);
     }

@@ -104,6 +104,18 @@
                     }
                 }
                 _%>
+
+                <dt><span jhiTranslate="userManagement.createdBy">Created By</span></dt>
+                <dd>{{ <%= entityInstance %>.createdBy }}</dd>
+
+                <dt><span jhiTranslate="userManagement.createdDate">Created Date</span></dt>
+                <dd>{{ <%= entityInstance %>.createdDate | date:'dd/MM/yy HH:mm' }}</dd>
+
+                <dt><span jhiTranslate="userManagement.lastModifiedBy">Last Modified By</span></dt>
+                <dd>{{ <%= entityInstance %>.lastModifiedBy }}</dd>
+
+                <dt><span jhiTranslate="userManagement.lastModifiedDate">Last Modified Date</span></dt>
+                <dd>{{ <%= entityInstance %>.lastModifiedDate | date:'dd/MM/yy HH:mm' }}</dd>
             </dl>
 
             <button type="submit"
